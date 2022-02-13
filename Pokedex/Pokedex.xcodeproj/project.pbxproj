@@ -11,6 +11,10 @@
 		449DA1F127B990DC0053AD51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA1F027B990DC0053AD51 /* ContentView.swift */; };
 		449DA1F327B990DE0053AD51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DA1F227B990DE0053AD51 /* Assets.xcassets */; };
 		449DA1F627B990DE0053AD51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DA1F527B990DE0053AD51 /* Preview Assets.xcassets */; };
+		449DA20427B992940053AD51 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA20327B992940053AD51 /* PokemonCell.swift */; };
+		449DA20627B992DB0053AD51 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA20527B992DB0053AD51 /* Pokemon.swift */; };
+		449DA20827B9934E0053AD51 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA20727B9934E0053AD51 /* PokemonViewModel.swift */; };
+		449DA20A27B993860053AD51 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DA20927B993860053AD51 /* PokemonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		449DA1F027B990DC0053AD51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		449DA1F227B990DE0053AD51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449DA1F527B990DE0053AD51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		449DA20327B992940053AD51 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		449DA20527B992DB0053AD51 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		449DA20727B9934E0053AD51 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		449DA20927B993860053AD51 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				449DA1EE27B990DC0053AD51 /* PokedexApp.swift */,
+				449DA1FC27B992240053AD51 /* Model */,
+				449DA20027B9924B0053AD51 /* View Model */,
+				449DA20227B992680053AD51 /* Views */,
 				449DA1F027B990DC0053AD51 /* ContentView.swift */,
 				449DA1F227B990DE0053AD51 /* Assets.xcassets */,
 				449DA1F427B990DE0053AD51 /* Preview Content */,
@@ -65,6 +76,31 @@
 				449DA1F527B990DE0053AD51 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		449DA1FC27B992240053AD51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				449DA20527B992DB0053AD51 /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		449DA20027B9924B0053AD51 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				449DA20727B9934E0053AD51 /* PokemonViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		449DA20227B992680053AD51 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				449DA20327B992940053AD51 /* PokemonCell.swift */,
+				449DA20927B993860053AD51 /* PokemonView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449DA20A27B993860053AD51 /* PokemonView.swift in Sources */,
 				449DA1F127B990DC0053AD51 /* ContentView.swift in Sources */,
+				449DA20827B9934E0053AD51 /* PokemonViewModel.swift in Sources */,
+				449DA20627B992DB0053AD51 /* Pokemon.swift in Sources */,
 				449DA1EF27B990DC0053AD51 /* PokedexApp.swift in Sources */,
+				449DA20427B992940053AD51 /* PokemonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
