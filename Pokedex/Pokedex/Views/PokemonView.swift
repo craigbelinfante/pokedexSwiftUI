@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct PokemonView: View {
+    
+    let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: gridItems, content: {
+                    ForEach(0..<251) { _ in
+                        PokemonCell()
+                    }
+                })
+            }
+        }
     }
 }
 
