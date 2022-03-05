@@ -11,6 +11,15 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
+            .onAppear {
+                PokemonViewModel().fetchPokemon { pokemon in
+                    print(pokemon)
+                    
+                    for pokemon in pokemon {
+                        print(pokemon.name)
+                    }
+                }
+            }
     }
 }
 

@@ -16,11 +16,11 @@ struct PokemonView: View {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 20) {
                     ForEach(0..<251) { _ in
-                        PokemonCell()
+                        PokemonCell(pokemon: MOCK_POKEMON[0])
                     }
                 }
             }
-            .navigationTitle("Pokedex")
+           // .navigationTitle("Pokedex")
         }
     }
 }
