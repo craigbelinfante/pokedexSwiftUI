@@ -14,12 +14,13 @@ struct PokemonView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: gridItems, content: {
+                LazyVGrid(columns: gridItems, spacing: 20) {
                     ForEach(0..<251) { _ in
                         PokemonCell()
                     }
-                })
+                }
             }
+            .navigationTitle("Pokedex")
         }
     }
 }
