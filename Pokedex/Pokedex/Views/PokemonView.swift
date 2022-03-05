@@ -12,6 +12,7 @@ struct PokemonView: View {
     let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
+        
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 20) {
@@ -20,8 +21,17 @@ struct PokemonView: View {
                     }
                 }
             }
-           // .navigationTitle("Pokedex")
         }
+        .onAppear {
+            PokemonViewModel().fetchPokemon { pokemon in
+               // print(pokemon)
+                
+                for pokemon in pokemon {
+                    print(pokemon.name)
+                }
+            }
+        }
+        // .navigationTitle("Pokedex")
     }
 }
 

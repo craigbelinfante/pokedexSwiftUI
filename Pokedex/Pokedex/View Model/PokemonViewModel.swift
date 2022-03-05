@@ -21,7 +21,6 @@ class PokemonViewModel {
             
             DispatchQueue.main.async {
                 completion(pokemon.results)
-                print(pokemon.results)
             }
         }.resume()
     }
