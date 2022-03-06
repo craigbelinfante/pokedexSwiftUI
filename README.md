@@ -1,17 +1,21 @@
-# Pokede
-An application to show pokemon
+# Pokedex
+
+<p align="row">
+<img src= "https://media.giphy.com/media/lwPqez10KYtBZZRYBH/giphy.gif" width="400" >
+</p>
 
 ## Features
 
-- To be added
+- List view of main pokemon with type
 
 ## Upcoming Features
 
 - Login page through Apple
+- Detail View
 
 ## Requirements
 
-- iOS 13.5+
+- iOS 15.0+
 - Xcode 13
 
 ## Contact
