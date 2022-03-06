@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PokemonCell: View {
-   let pokemon: Pokemon
+    let pokemon: Pokemon
     
     var body: some View {
         ZStack {
@@ -31,11 +31,15 @@ struct PokemonCell: View {
                         )
                         .frame(width: 100, height: 24)
                     
-                    Image("pokemonImage")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 68, height: 68)
-                        .padding([.bottom, .trailing], 4)
+                    AsyncImage(url: URL(string: pokemon.imageUrl)) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .padding([.bottom,.trailing], 4)
+                    } placeholder: {
+                        Color.gray
+                    }
+                    .frame(width: 68, height: 68)
                 }
             }
         }

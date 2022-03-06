@@ -8,17 +8,23 @@
 import SwiftUI
 
 class PokemonViewModel: ObservableObject {
+    
     @Published var pokemon = [Pokemon]()
+    
     init() {
         fetchPokemon()
     }
-    
+
     let baseURL = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
     
     func fetchPokemon() {
         guard let url = URL(string: baseURL) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let error = error {
+                print("Error loading pokemon: \(error)")
+            }
             
             guard let data = data?.parseData("null,") else { return }
             
@@ -27,17 +33,10 @@ class PokemonViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                 self.pokemon = pokemon
-                print(pokemon)
             }
         }.resume()
     }
+    
 }
 
-extension Data {
-    func parseData(_ string: String) -> Data? {
-        let dataString = String(data: self, encoding: .utf8)
-        let parsedData = dataString?.replacingOccurrences(of: string, with: "")
-        guard let data = parsedData?.data(using: .utf8) else { return nil }
-        return data
-    }
-}
+
