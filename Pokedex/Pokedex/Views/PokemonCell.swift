@@ -20,7 +20,7 @@ struct PokemonCell: View {
                     .padding(.leading)
                 
                 HStack {
-                    Text("poison")
+                    Text(pokemon.type)
                         .font(.subheadline).bold()
                         .foregroundColor(.white)
                         .padding(.horizontal, 16)

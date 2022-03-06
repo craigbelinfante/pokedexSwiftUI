@@ -7,21 +7,37 @@
 
 import SwiftUI
 
-class PokemonViewModel {
-    let baseURL = "https://pokeapi.co/api/v2/pokemon?limit=251"
+class PokemonViewModel: ObservableObject {
+    @Published var pokemon = [Pokemon]()
+    init() {
+        fetchPokemon()
+    }
     
-    func fetchPokemon(completion: @escaping ([Pokemon]) -> ()) {
+    let baseURL = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
+    
+    func fetchPokemon() {
         guard let url = URL(string: baseURL) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
+            
+            guard let data = data?.parseData("null,") else { return }
             
             let decoder = JSONDecoder()
-            guard let pokemon = try? decoder.decode(PokemonResults.self, from: data) else { return }
+            guard let pokemon = try? decoder.decode([Pokemon].self, from: data) else { return }
             
             DispatchQueue.main.async {
-                completion(pokemon.results)
+                self.pokemon = pokemon
+                print(pokemon)
             }
         }.resume()
+    }
+}
+
+extension Data {
+    func parseData(_ string: String) -> Data? {
+        let dataString = String(data: self, encoding: .utf8)
+        let parsedData = dataString?.replacingOccurrences(of: string, with: "")
+        guard let data = parsedData?.data(using: .utf8) else { return nil }
+        return data
     }
 }

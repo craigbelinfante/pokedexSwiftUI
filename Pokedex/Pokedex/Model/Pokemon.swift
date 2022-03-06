@@ -7,18 +7,15 @@
 
 import Foundation
 
-struct PokemonResults: Codable {
-    var results: [Pokemon]
-}
-
 struct Pokemon: Codable, Identifiable {
-    let id = UUID()
+    let id: Int
     let name: String
-    let url: String
+    let imageUrl: String
+    let type: String
 }
 
 
 
 let MOCK_POKEMON: [Pokemon] = [
-    .init(name: "Bulbasaur", url: "pokemonImage")
+    .init(id: 0, name: "Bulbasaur", imageUrl: "pokemonImage", type: "poison")
 ]
