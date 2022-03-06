@@ -22,8 +22,9 @@ struct PokemonView: View {
                     }
                 }
             }
+            .navigationTitle("Pokedex")
         }
-        // .navigationTitle("Pokedex")
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

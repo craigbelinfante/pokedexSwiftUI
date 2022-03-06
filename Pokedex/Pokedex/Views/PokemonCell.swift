@@ -16,11 +16,11 @@ struct PokemonCell: View {
                 Text(pokemon.name.capitalized)
                     .font(.headline)
                     .foregroundColor(.white)
-                    .padding(.top, 4)
+                    .padding(.top, 16)
                     .padding(.leading)
                 
                 HStack {
-                    Text(pokemon.type)
+                    Text(pokemon.type.capitalized)
                         .font(.subheadline).bold()
                         .foregroundColor(.white)
                         .padding(.horizontal, 16)
@@ -37,15 +37,36 @@ struct PokemonCell: View {
                             .scaledToFit()
                             .padding([.bottom,.trailing], 4)
                     } placeholder: {
-                        Color.gray
+                        Color.clear
                     }
                     .frame(width: 68, height: 68)
                 }
             }
         }
-        .background(Color.green)
+        .background(Color(cellBackgroundColor(pokemon.type)))
         .cornerRadius(12)
-        .shadow(color: .green, radius: 6, x: 0.0, y: 0.0)
+        .shadow(color: .clear, radius: 6, x: 0.0, y: 0.0)
+    }
+    
+    private func cellBackgroundColor(_ type: String) -> UIColor {
+        switch type {
+        case "fire": return .systemRed
+        case "poison": return .systemGreen
+        case "bug": return .systemGreen
+        case "grass": return .systemGreen
+        case "water": return .systemBlue
+        case "electric": return .systemYellow
+        case "psychic": return .systemPurple
+        case "normal": return .systemOrange
+        case "ground": return .systemBrown
+        case "fighting": return .systemBrown
+        case "rock": return .systemGray
+        case "flying": return .systemTeal
+        case "ice": return .systemIndigo
+        case "dragon": return .systemIndigo
+        case "fairy": return .systemPink
+        default: return .systemGray2
+        }
     }
 }
 
